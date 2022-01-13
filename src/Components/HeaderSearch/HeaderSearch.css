@@ -1,0 +1,6 @@
+.HeaderSearch {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    gap: 20px;
+}
