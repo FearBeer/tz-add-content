@@ -5,9 +5,15 @@ import Panel from './Components/Panel/Panel';
 import Label from './Components/Label/Label';
 import Input from './Components/Input/Input';
 import HeaderSearch from './Components/HeaderSearch/HeaderSearch';
+import { useState, React}  from 'react';
+import store from './store/store';
+
+import { incrementCount } from './store/actions';
 
 
 function App() {
+
+  
   
   let content = [
     {
@@ -83,14 +89,18 @@ function App() {
     }
   }
 
-  chooseTag(content[0]);
+
+    
   
   return (
+    
     <div className="App">
+      <h3>0</h3>
+      {/* <button onClick={() => store.dispatch(incrementCount())}></button> */}
       <HeaderSearch>
         <Input />
         <Input />
-        <Button text='Применить'/>
+        <Button text='Применить' onclick={() => store.dispatch(incrementCount())} />
        </HeaderSearch> 
       <Content>
         {content.map(item => item=chooseTag(item))}
